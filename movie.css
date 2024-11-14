@@ -1,0 +1,340 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: url(/img/Frame\ 2.png) no-repeat;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    height: 100vh;  /* Ensure the body covers the full height */
+    margin: 0;  /* Remove default margin */
+    overflow: hidden;
+    
+    
+}
+.main-content{
+    position: relative;
+    z-index: 1;
+    padding: 0 80px 0 80px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+   
+    text-align: center;
+    height: 100vh;  /* Full viewport height */
+}
+.gradient-overlay {
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient( rgba(0, 0, 0, 0.7) 2.72%, rgba(0, 0, 0, 0) 35.89%, rgba(0, 0, 0, 0.53) 100%), linear-gradient(90deg, rgba(0, 0, 0, 0.9) 33.18%, rgba(0, 0, 0, 0) 80.52%);
+    z-index: 0;
+    }
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    color: #fff;
+    position: relative;
+    height: 100px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
+
+
+.search-container {
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    position: relative;
+    
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+}
+
+.search-icon {
+    display: flex;
+    font-size: 24px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    padding-left: 4px;
+    
+    
+}
+
+.search-input {
+    padding: 8px;
+    font-size: 16px;
+    width: 0;
+    transition: width 0.5s ease;
+    background-color: transparent;
+    border: none;
+    display: block;
+    width: 550px;
+    height: 45px;
+    border: none;
+    color: white;
+}
+.search-input:focus {
+    outline: none; 
+    
+}
+#toggleWatchlist{
+    background-color: orange;
+    width: 200px;
+    color: white;
+}
+
+.filter-icon {
+    cursor: pointer;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px; /* Установите фиксированную ширину */
+    height: 30px; 
+}
+
+.filter-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: rgba(0, 0, 0, 0.9);
+    border-radius: 5px;
+    padding: 10px;
+    width: 150px;
+    z-index: 9999; /* Увеличьте z-index, чтобы он был поверх других элементов */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.filter-option {
+    padding: 10px;
+    color: #fff;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.filter-option:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.filter-dropdown .filter-option:last-child {
+    border-bottom: none;
+}
+
+
+
+
+#welcomeMessage{
+    margin: 100px 0px;
+    color: white;
+    text-align: left;
+    font-family: '', sans-serif;  
+    display: flex;
+    flex-direction: column;
+    font-size: 70px;
+    gap: 30px;
+}
+#main-text{
+  
+    color: white;
+    text-align: left;
+    font-family: 'Roboto', sans-serif;  
+    font-size: 40px;
+}
+
+
+/* Ensure the container for the movie grid fills the remaining space */
+
+.movie-grid {
+    position: absolute;
+    bottom: 0px;  /* Distance from the bottom */
+    left: 80px;
+    right: 80px;
+    padding: 10px;
+   
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 10px;
+    flex-wrap: nowrap; /* Ensure it stays in one line */
+}
+.movie-grid::-webkit-scrollbar {
+    display: none;
+}   
+.movie-card {
+    position: relative;
+    width: 132px; /* Fixed width */
+    height: 180px;
+    background: #333;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    flex: 0 0 auto; /* Prevent shrinking */
+}
+
+.movie-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.movie-card:hover {
+    transform: scale(1.1);
+}
+#movieDetailsContainer{
+    display: flex;
+    justify-content: left;
+    align-items:flex-start;
+    text-align: left;
+}
+/* Container for movie details */
+.movie-details-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: #fff;  /* White text color */
+    padding: 20px 0;  /* Padding for spacing inside the container */
+    border-radius: 10px;  /* Rounded corners */
+    max-width: 600px;  /* Maximum width */
+      /* Centering the container */
+    
+    font-family: 'Roboto', sans-serif;  /* Font for text */
+    text-align: left;  /* Center the text */
+    transition: transform 0.3s ease-in-out;  /* Smooth scaling effect */
+}
+
+/* Title styling */
+.movie-details-container h2 {
+    font-size: 2rem;  /* Font size for the title */
+    margin-bottom: 10px;  /* Space below the title */
+    font-weight: bold;
+}
+
+/* Overview text styling */
+.movie-details-container p {
+    font-size: 1rem;  /* Font size for paragraphs */
+    line-height: 1.5;  /* Line height for readability */
+    margin-bottom: 15px;  /* Space below paragraphs */
+}
+
+/* Rating text styling */
+.movie-details-container p:last-child {
+    font-size: 1.1rem;  /* Slightly larger font for rating */
+    font-weight: 500;  /* Slightly bold */
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 100; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.8); /* Black with opacity */
+}
+
+
+.modal-content {
+    background-color: rgb(49, 46, 46);
+    margin: 40px auto; /* 10% from the top and centered */
+    padding: 20px;
+    border-radius: 10px;        
+    width: 80%;
+    height: auto;
+    position: relative;
+    color: white;
+    
+
+}
+.many-texts{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: left;
+    text-align: left;
+    gap: 30px;
+}
+#modalMovieDetails{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+.title-image{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+   
+
+}
+.title-image img{
+    width: 200px;
+    height:280px;
+    border-radius: 15px;
+}
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+#addToWatch{
+    width: 30px;
+    background-color: transparent;
+    border: none;
+}
+
+/* Default style for the watchlist button */
+.watchlist-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.watchlist-btn img {
+    width: 20px;  /* Adjust as needed */
+}
+
+/* Style for the active (added to watchlist) button */
+.watchlist-btn.active img {
+    filter: grayscale(0) brightness(0.8); /* Example active style, can be adjusted */
+}
+
+/* Optionally add a background or border when active */
+.watchlist-btn.active {
+    background-color: #f0f0f0;
+}
+

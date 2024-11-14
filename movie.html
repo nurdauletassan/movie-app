@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Search App</title>
+    <link rel="stylesheet" href="/movie.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ysabeau+Office:ital,wght@0,1..1000;1,1..1000&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="gradient-overlay"></div>
+    <div class="main-content">
+        <header>
+           
+           <div class="logo" id="homeLogo">MovieApp</div>
+
+            <div class="search-container">
+                <!-- Иконка поиска и поле ввода -->
+                <span class="search-icon" id="searchIcon">
+                    <img src="/img/search.svg" alt="">
+                </span>
+                <input type="text" id="searchInput" class="search-input" placeholder="Search for a movie...">
+        
+                <!-- Иконка фильтра -->
+                <div class="filter-icon">
+                    <img id="filterIcon" src="/img/filter.svg" alt="">
+                </div>
+        
+                <!-- Выпадающий список фильтров -->
+                <div id="filterDropdown" class="filter-dropdown">
+                    <div class="filter-option" data-filter="popular">Popular</div>
+                    <div class="filter-option" data-filter="release_date">Release Date</div>
+                    <div class="filter-option" data-filter="rating">Rating</div>
+                </div>
+            </div>
+        
+            <!-- Кнопка "Watchlist" -->
+            <div class="saved-logo" id="watchlistSpan">
+                <img  src="/img/saved.svg" alt="">
+            </div>
+        </header>
+        <div id="welcomeMessage">
+            <p>Welcome to MovieApp</p>
+            <p id="main-text">Discover Movie world <br>and enjoy with us </p>
+        </div>
+
+        <!-- Movie Grid -->
+        <div id="movieGrid" class="movie-grid"></div>
+
+                <!-- Movie Information Modal -->
+        <div id="movieModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div id="modalMovieDetails">
+                    <!-- Movie details will be populated here -->
+                </div>
+            </div>
+        </div>
+
+       
+        
+
+    </div>
+    <script src="movie.js"></script>
+</body>
+</html>
