@@ -1,10 +1,14 @@
-FROM nginx:stable
+# Use the official Nginx image
+FROM nginx:alpine
 
-# Copy the HTML, CSS, and JavaScript files into the container
-COPY movie.html /usr/share/nginx/html/
-COPY movie.js /usr/share/nginx/html/
-COPY movie.css /usr/share/nginx/html/
+# Set the working directory
+WORKDIR /usr/share/nginx/html
+
+# Copy your project files to the web server directory
+COPY . .
+
+# Expose port 80 to access the app
 EXPOSE 80
 
-# Start Nginx when the container starts
+# Start the Nginx server
 CMD ["nginx", "-g", "daemon off;"]
